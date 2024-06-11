@@ -1,0 +1,292 @@
+{
+  "doc_type": "pipeline",
+  "version": "3.0",
+  "json_schema": "http://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json",
+  "id": "elyra-auto-generated-pipeline",
+  "primary_pipeline": "primary",
+  "pipelines": [
+    {
+      "id": "primary",
+      "nodes": [
+        {
+          "id": "ea0540a5-483f-4a3c-bd54-b393cd908621",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "component_parameters": {
+              "gpu_ids": [],
+              "dependencies": [],
+              "include_subdirectories": false,
+              "outputs": [],
+              "node_configuration": [],
+              "filename": "data_ingestion.ipynb",
+              "env_vars": [
+                {
+                  "env_var": "MINIO_ENDPOINT"
+                }
+              ]
+            },
+            "label": "",
+            "ui_data": {
+              "label": "data_ingestion.ipynb",
+              "image": "/user/yhuang/static/elyra/notebook.svg",
+              "x_pos": 193,
+              "y_pos": 251,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "99ce0f52-db70-44f8-808e-062c7c9e3bfa",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "component_parameters": {
+              "gpu_ids": [],
+              "dependencies": [],
+              "include_subdirectories": false,
+              "outputs": [],
+              "node_configuration": [],
+              "filename": "model_training_NB.ipynb",
+              "env_vars": [
+                {
+                  "env_var": "MINIO_ENDPOINT"
+                }
+              ]
+            },
+            "label": "",
+            "ui_data": {
+              "label": "model_training_NB.ipynb",
+              "image": "/user/yhuang/static/elyra/notebook.svg",
+              "x_pos": 481,
+              "y_pos": 195,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "58d74a23-47ae-4ff7-940c-9eb652b0cb31",
+                  "node_id_ref": "ea0540a5-483f-4a3c-bd54-b393cd908621",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "dc260b73-0d28-4882-959e-55cbdb190032",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "component_parameters": {
+              "gpu_ids": [],
+              "dependencies": [],
+              "include_subdirectories": false,
+              "outputs": [],
+              "node_configuration": [],
+              "filename": "model_training_LR.ipynb",
+              "env_vars": [
+                {
+                  "env_var": "MINIO_ENDPOINT"
+                }
+              ]
+            },
+            "label": "",
+            "ui_data": {
+              "label": "model_training_LR.ipynb",
+              "image": "/user/yhuang/static/elyra/notebook.svg",
+              "x_pos": 486,
+              "y_pos": 310,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "dcaa86fd-ad28-4fc1-bb28-060fa66258e1",
+                  "node_id_ref": "ea0540a5-483f-4a3c-bd54-b393cd908621",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "a8f984f7-f438-4a64-80f5-4b09f686a0ee",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "component_parameters": {
+              "gpu_ids": [],
+              "dependencies": [],
+              "include_subdirectories": false,
+              "outputs": [],
+              "node_configuration": [],
+              "filename": "model_evaluation.ipynb",
+              "env_vars": [
+                {
+                  "env_var": "MINIO_ENDPOINT"
+                }
+              ]
+            },
+            "label": "",
+            "ui_data": {
+              "label": "model_evaluation.ipynb",
+              "image": "/user/yhuang/static/elyra/notebook.svg",
+              "x_pos": 796,
+              "y_pos": 249,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "2e2b2406-ce8a-432d-8dd8-01c6cae81e93",
+                  "node_id_ref": "99ce0f52-db70-44f8-808e-062c7c9e3bfa",
+                  "port_id_ref": "outPort"
+                },
+                {
+                  "id": "d25e5f88-b5de-47e6-9159-9262866b83b8",
+                  "node_id_ref": "dc260b73-0d28-4882-959e-55cbdb190032",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "app_data": {
+        "ui_data": {
+          "comments": []
+        },
+        "version": 8,
+        "runtime_type": "IDOML",
+        "properties": {
+          "name": "text_clf_20news",
+          "runtime": "IDOML (Apache Airflow)",
+          "pipeline_parameters": [],
+          "pipeline_version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 0
+          },
+          "pipeline_defaults": {
+            "env_vars": [],
+            "dag_configuration": [],
+            "default_args_dict": [],
+            "default_args_queue": {
+              "queue": ""
+            },
+            "runtime_image": "sntyulin/idoml-base"
+          }
+        }
+      },
+      "runtime_ref": ""
+    }
+  ],
+  "schemas": []
+}
