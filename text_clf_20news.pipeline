@@ -26,9 +26,9 @@
                 }
               ]
             },
-            "label": "",
+            "label": "data_ingestion",
             "ui_data": {
-              "label": "data_ingestion.ipynb",
+              "label": "data_ingestion",
               "image": "/user/yhuang/static/elyra/notebook.svg",
               "x_pos": 193,
               "y_pos": 251,
@@ -82,9 +82,9 @@
                 }
               ]
             },
-            "label": "",
+            "label": "model_train_NB",
             "ui_data": {
-              "label": "model_training_NB.ipynb",
+              "label": "model_train_NB",
               "image": "/user/yhuang/static/elyra/notebook.svg",
               "x_pos": 481,
               "y_pos": 195,
@@ -145,9 +145,9 @@
                 }
               ]
             },
-            "label": "",
+            "label": "model_train_LR",
             "ui_data": {
-              "label": "model_training_LR.ipynb",
+              "label": "model_train_LR",
               "image": "/user/yhuang/static/elyra/notebook.svg",
               "x_pos": 486,
               "y_pos": 310,
@@ -208,9 +208,9 @@
                 }
               ]
             },
-            "label": "",
+            "label": "model evaluation",
             "ui_data": {
-              "label": "model_evaluation.ipynb",
+              "label": "model evaluation",
               "image": "/user/yhuang/static/elyra/notebook.svg",
               "x_pos": 796,
               "y_pos": 249,
@@ -276,11 +276,11 @@
           },
           "pipeline_defaults": {
             "env_vars": [],
-            "dag_configuration": [],
-            "default_args_dict": [],
             "default_args_queue": {
               "queue": ""
             },
+            "dag_configuration": [],
+            "default_args_dict": [],
             "runtime_image": "sntyulin/idoml-base"
           }
         }
