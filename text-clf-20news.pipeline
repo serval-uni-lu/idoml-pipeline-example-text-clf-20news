@@ -266,7 +266,7 @@
         "version": 8,
         "runtime_type": "IDOML",
         "properties": {
-          "name": "text_clf_20news",
+          "name": "text-clf-20news",
           "runtime": "IDOML (Apache Airflow)",
           "pipeline_parameters": [],
           "pipeline_version": {
