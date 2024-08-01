@@ -276,12 +276,12 @@
           },
           "pipeline_defaults": {
             "env_vars": [],
+            "dag_configuration": [],
+            "default_args_dict": [],
             "default_args_queue": {
               "queue": ""
             },
-            "dag_configuration": [],
-            "default_args_dict": [],
-            "runtime_image": "sntyulin/idoml-base"
+            "runtime_image": "ghcr.io/yulinhuang/idoml-python:3.11"
           }
         }
       },
